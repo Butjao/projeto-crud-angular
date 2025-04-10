@@ -1,0 +1,11 @@
+{
+  "telephones": [
+    {
+      "id": "1",
+      "value": "+55 84 99610-2212",
+      "monthlyPrice": "0.03",
+      "setupPrice": "3.40",
+      "currency": "BRL"
+    }
+  ]
+}

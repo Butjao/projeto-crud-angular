@@ -1,0 +1,43 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>
+            Adicionar Novo Numero
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form #telefoneForm="ngForm" (ngSubmit)="saveTelefone()">
+            <div class="form-group">
+                <mat-form-field class="half-widht">
+                    <label >Numero</label>
+                    <input matInput placeholder="+00 00 0000-0000" name="value" [(ngModel)]="newTelefone.value" required type="tel">
+                    <mat-error *ngIf="telefoneForm.controls['value']?.touched && telefoneForm.controls['value']?.hasError('required')">Campo Obrigatorio</mat-error>
+                </mat-form-field>
+            
+                <mat-form-field class="half-widht">
+                    <label >Valor Mensal</label>
+                    <input matInput placeholder="0" name="monthlyPrice" [(ngModel)]="newTelefone.monthlyPrice" required >
+                    <mat-error *ngIf="telefoneForm.controls['monthlyPrice']?.touched && telefoneForm.controls['monthlyPrice']?.hasError('required')">Campo Obrigatorio</mat-error>
+                </mat-form-field>
+            
+                <mat-form-field class="half-widht">
+                    <label >Valor Setup</label>
+                    <input matInput placeholder="0" name="setupPrice" [(ngModel)]="newTelefone.setupPrice" required >
+                    <mat-error *ngIf="telefoneForm.controls['setupPrice']?.touched && telefoneForm.controls['setupPrice']?.hasError('required')">Campo Obrigatorio</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <mat-form-field class="half-widht">
+                    <label>Moeda</label>
+                    <mat-select placeholder="-" name="currency" [(ngModel)]="newTelefone.currency" required>
+                        <mat-option value="BRL">BRL</mat-option>
+                        <mat-option value="USD">USD</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="telefoneForm.controls['currency']?.touched && telefoneForm.controls['currency']?.hasError('required')">Campo Obrigatorio</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="form-group">
+                <button mat-raised-button color="primary" [disabled]="!telefoneForm.valid">Adicionar Novo</button>
+            </div>
+        </form>
+    </mat-card-content>
+</mat-card>

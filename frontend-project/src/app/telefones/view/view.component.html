@@ -1,0 +1,16 @@
+<ng-container class="mat-card" *ngIf="telefoneDetails">
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title><h1>Detalhes Telefone</h1></mat-card-title>
+            </mat-card-title-group>
+        </mat-card-header>
+        <br>
+        <mat-card-content>
+            <div><strong>Telefone: </strong>{{telefoneDetails.value}}</div>
+            <div><strong>Valor Mensal: </strong>{{telefoneDetails.monthlyPrice}}</div>
+            <div><strong>Valor Config.: </strong>{{telefoneDetails.setupPrice}}</div>
+            <div><strong>Moeda: </strong>{{telefoneDetails.currency}}</div>
+        </mat-card-content>
+    </mat-card>
+</ng-container>
